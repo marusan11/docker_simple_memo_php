@@ -2,9 +2,9 @@
 
 /**
  * 空チェック
- * ＠param $errors
- * ＠param $check_value
- * ＠param $message
+ * @param $errors
+ * @param $check_value
+ * @param $message
  */
 function emptyCheck(&$errors, $check_value, $message) {
   if(empty(trim($check_value))) {
@@ -14,10 +14,10 @@ function emptyCheck(&$errors, $check_value, $message) {
 
 /**
  * 最小文字数チェック
- * ＠param $errors
- * ＠param $check_value
- * ＠param $message
- * ＠param int $min_size
+ * @param $errors
+ * @param $check_value
+ * @param $message
+ * @param int $min_size
  */
 function stringMinSizeCheck(&$errors,$check_value,$message,$min_size = 8) {
   if(mb_strlen($check_value) < $min_size) {
@@ -42,7 +42,7 @@ function stringMaxSizeCheck(&$errors, $check_value, $message, $max_size = 255) {
  * メールアドレスチェック
  * @param $errors
  * @param $check_value
- * @param $messeage
+ * @param $message
  */
 function mailAddressCheck(&$errors, $check_value, $message) {
   if(filter_var($check_value, FILTER_VALIDATE_EMAIL) == false) {
@@ -54,10 +54,10 @@ function mailAddressCheck(&$errors, $check_value, $message) {
  * 半角英数字チェック
  * @param $errors
  * @param $check_value
- * @param $messeage
+ * @param $message
  */
 function halfAlphanumericCheck(&$errors, $check_value, $message) {
-  if(preg_match("/^[a-zA-ZO-9]+$/", $check_value) == false) {
+  if(preg_match("/^[a-zA-Z0-9]+$/", $check_value) == false) {
     array_push($errors, $message);
   }
 }

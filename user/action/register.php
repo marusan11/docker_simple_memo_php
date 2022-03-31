@@ -18,10 +18,10 @@
   emptyCheck($_SESSION['errors'], $user_password, "パスワードを入力してください。");
 
   // - 文字数チェック
-  stringMaxSizeCheck($_SESSION['errors'], $user_name, "ユーザー名は２５５文字以内で入力してください。");
-  stringMaxSizeCheck($_SESSION['errors'], $user_email, "メールアドレスは２５５文字以内で入力してください。");
-  stringMaxSizeCheck($_SESSION['errors'], $user_password, "パスワードは２５５文字以内で入力してください。");
-  stringMinSizeCheck($_SESSION['errors'], $user_password, "パスワードは８文字以上で入力してください。");
+  stringMaxSizeCheck($_SESSION['errors'], $user_name, "ユーザー名は255文字以内で入力してください。");
+  stringMaxSizeCheck($_SESSION['errors'], $user_email, "メールアドレスは255文字以内で入力してください。");
+  stringMaxSizeCheck($_SESSION['errors'], $user_password, "パスワードは255文字以内で入力してください。");
+  stringMinSizeCheck($_SESSION['errors'], $user_password, "パスワードは8文字以上で入力してください。");
 
   if(!$_SESSION['errors']) {
     // - メールアドレスチェック
@@ -32,7 +32,7 @@
     halfAlphanumericCheck($_SESSION['errors'], $user_password, "パスワードは半角英数字で入力してください。");
 
     // - メールアドレス重複チェック
-    mailAddressDuplicationCheck($_SESSION['errors'], $user_email, "既に登録れせているメールアドレスです。");
+    mailAddressDuplicationCheck($_SESSION['errors'], $user_email, "既に登録されているメールアドレスです。");
 
   }
 

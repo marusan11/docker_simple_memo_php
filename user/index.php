@@ -18,7 +18,7 @@
                             foreach($_SESSION['errors'] as $error) {
                                 echo "<div> {$error} </div>";
                             }
-                            echo '<div>';
+                            echo '</div>';
                             unset($_SESSION['errors']);
                         }
                         ?>
